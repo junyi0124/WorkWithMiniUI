@@ -23,5 +23,15 @@ namespace FirstCoreAppDemo.Models
 
         public int? PId { get; set; }
 
+        /// <summary>
+        /// 是否为条目，而不是分类
+        /// </summary>
+        public bool IsItem
+        {
+            get
+            {
+                return Code.Length == FullCode.Length && string.Equals(Code, FullCode);
+            }
+        }
     }
 }

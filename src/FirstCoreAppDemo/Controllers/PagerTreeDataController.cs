@@ -1,13 +1,21 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections;
+using Microsoft.AspNetCore.Hosting;
 
 namespace FirstCoreAppDemo.Controllers
 {
     //[Produces("application/json")]
     public class PagerTreeDataController : Controller
     {
-        public ContentResult Index(string key="", int pageIndex=0, int pageSize=20)
+        private IHostingEnvironment _env;
+
+        public PagerTreeDataController(IHostingEnvironment env)
+        {
+            _env = env;
+        }
+
+        public ContentResult Index(string key = "", int pageIndex = 0, int pageSize = 20, string __ecconfig = "")
         {
             //获取列表数据（树）
             ArrayList treelist = FromDataBase();
@@ -17,7 +25,7 @@ namespace FirstCoreAppDemo.Controllers
             tree.LoadList(treelist);
 
             //处理折叠
-            tree.SetRequest(Request);
+            tree.SetRequest(__ecconfig);
 
             //处理过滤
             if (!string.IsNullOrEmpty(key))
@@ -79,8 +87,9 @@ namespace FirstCoreAppDemo.Controllers
 
         private string MapPath(string v)
         {
+            var resPath = _env.ContentRootPath + "\\wwwroot\\js\\{0}";
             //todo 此处没有使用动态获取，以后有时间再修复这个功能
-            return $@"D:\johns\Documents\Visual Studio 2015\Projects\FirstCoreAppDemo\src\FirstCoreAppDemo\wwwroot\js\{v}";
+            return string.Format(resPath, v);
         }
     }
 }

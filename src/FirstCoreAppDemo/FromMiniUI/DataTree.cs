@@ -109,12 +109,13 @@ namespace FirstCoreAppDemo.FromMiniUI
 
         //////////////////////////////////////////////////////////////////////////////////
         protected ArrayList _collapseNodes = new ArrayList();
-        public void SetRequest(HttpRequest Request)
+
+        public void SetRequest(string ecconfig)
         {
-            string s = Convert.ToString(Request.Query[ecconfig]);
-            if (!string.IsNullOrEmpty(s))
+            //string s = Convert.ToString(Request.Query[ecconfig]);
+            if (!string.IsNullOrEmpty(ecconfig))
             {
-                Hashtable config = (Hashtable)JSON.Decode(s);
+                Hashtable config = (Hashtable)JSON.Decode(ecconfig);
                 _collapseNodes = (ArrayList)config["collapseNodes"];
 
                 if (_collapseNodes == null) _collapseNodes = new ArrayList();
@@ -122,6 +123,7 @@ namespace FirstCoreAppDemo.FromMiniUI
             DoExpandeds();
             dataview = null;
         }
+
         protected void DoExpandeds()
         {
             //处理expandedField
@@ -197,7 +199,7 @@ namespace FirstCoreAppDemo.FromMiniUI
         /// <summary>
         /// 设置过滤后的节点数组
         /// </summary>
-        /// <param name="nodes"></param>       
+        /// <param name="nodes"></param>
         public void SetFiltered(ArrayList nodes)
         {
             filtered = nodes;

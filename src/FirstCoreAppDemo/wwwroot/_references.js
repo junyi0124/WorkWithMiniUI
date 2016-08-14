@@ -1,6 +1,5 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="js/boot.js" />
-/// <reference path="js/jquery-1.6.2.min.js" />
 /// <reference path="js/miniui/locale/en_US.js" />
 /// <reference path="js/miniui/locale/zh_CN.js" />
 /// <reference path="js/miniui/miniui.js" />
