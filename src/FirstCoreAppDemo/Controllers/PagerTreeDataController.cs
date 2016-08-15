@@ -55,8 +55,8 @@ namespace FirstCoreAppDemo.Controllers
 
         private ArrayList FromDataBase()
         {
-            // 严重怀疑 这个id没有被使用
-            string id = Request.Query["id"];
+            // 严重怀疑 这个id没用
+            //string id = Request.Query["id"];
 
             //示例从本地文件读取，实际应该从数据库获取树型数据
             string path = MapPath("tasks.txt");

@@ -3,6 +3,9 @@ using System.Collections;
 
 namespace FirstCoreAppDemo.FromMiniUI
 {
+    /// <summary>
+    /// spanning-tree utility v1.0
+    /// </summary>
     public class TreeUtil
     {
         public static ArrayList ToTree(ArrayList table, string childrenField, string idField, string parentIdField)
@@ -15,7 +18,7 @@ namespace FirstCoreAppDemo.FromMiniUI
                 Hashtable t = (Hashtable)table[i];
                 hash[t[idField]] = t;
             }
-            //数组转树形        
+            //数组转树形
             for (int i = 0, l = table.Count; i < l; i++)
             {
                 Hashtable t = (Hashtable)table[i];
@@ -46,6 +49,7 @@ namespace FirstCoreAppDemo.FromMiniUI
 
             return tree;
         }
+
         private static void SyncTreeNodes(ArrayList nodes, int outlineLevel, String outlineNumber, string childrenField)
         {
 

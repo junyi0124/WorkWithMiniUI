@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections;
 
 namespace FirstCoreAppDemo.FromMiniUI
@@ -14,12 +13,11 @@ namespace FirstCoreAppDemo.FromMiniUI
         protected string leafField = "isLeaf";
         protected string levelField = "_level";
         protected string expandedField = "expanded";
-        private readonly string ecconfig = "__ecconfig";
+        //private readonly string ecconfig = "__ecconfig";
 
         protected ArrayList tree = new ArrayList();     //树形数据
         protected ArrayList list = new ArrayList();     //列表数据
         protected ArrayList dataview = null;            //数据视图：折叠
-
         protected Hashtable idMaps = new Hashtable();
 
         public DataTree(string idField, string pidField, string nodesField)
@@ -28,6 +26,7 @@ namespace FirstCoreAppDemo.FromMiniUI
             this.pidField = pidField;
             this.nodesField = nodesField;
         }
+
         /// <summary>
         /// 加载列表数据
         /// </summary>
@@ -38,6 +37,7 @@ namespace FirstCoreAppDemo.FromMiniUI
             ArrayList tree = TreeUtil.ToTree(list, nodesField, idField, pidField);
             Load(tree);
         }
+
         /// <summary>
         /// 加载树形数据
         /// </summary>
@@ -74,10 +74,12 @@ namespace FirstCoreAppDemo.FromMiniUI
             //清除过滤信息
             filtered = null;
         }
+
         public int GetTotalCount()
         {
             return GetDataView().Count;
         }
+
         public ArrayList GetPagedData(int pageIndex, int pageSize)
         {
             //1)折叠后的数据视图
@@ -139,6 +141,7 @@ namespace FirstCoreAppDemo.FromMiniUI
                 node[expandedField] = false;
             }
         }
+
         //////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// 获取数据视图：过滤、折叠后
@@ -195,6 +198,7 @@ namespace FirstCoreAppDemo.FromMiniUI
             }
             return dataview;
         }
+
         protected ArrayList filtered = null;
         /// <summary>
         /// 设置过滤后的节点数组
@@ -205,6 +209,7 @@ namespace FirstCoreAppDemo.FromMiniUI
             filtered = nodes;
             dataview = null;
         }
+
         //////////////////////////////////////////////////////////////////////////////////
         public ArrayList GetAncestors(string id)
         {
@@ -219,20 +224,24 @@ namespace FirstCoreAppDemo.FromMiniUI
             ans.Reverse();
             return ans;
         }
+
         public Hashtable GetParentNode(string pid)
         {
             return (Hashtable)idMaps[pid];
         }
+
         public ArrayList GetChildNodes(string id)
         {
             Hashtable node = (Hashtable)idMaps[id];
             if (node == null) return null;
             return (ArrayList)node[nodesField];
         }
+
         public Hashtable GetNode(string id)
         {
             return (Hashtable)idMaps[id];
         }
+
         protected Boolean IsVisibleNode(Hashtable node)
         {
             Hashtable parent = GetParentNode(node[pidField].ToString());
@@ -241,6 +250,7 @@ namespace FirstCoreAppDemo.FromMiniUI
             if ((Boolean)parent[expandedField] == false) return false;
             return true;
         }
+
         protected ArrayList CloneNodes(ArrayList nodes)
         {
             ArrayList clone = (ArrayList)JSON.Decode(JSON.Encode(nodes));
