@@ -1,0 +1,423 @@
+{
+  "total": 59,
+  "data": [
+    {
+      "Start": "2007-01-01T00:00:00",
+      "_level": 1,
+      "ParentTaskUID": "-1",
+      "Name": "项目范围规划",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "Summary": 1,
+      "UID": "1",
+      "Duration": 8,
+      "Critical": 0,
+      "OutlineLevel": 1,
+      "Finish": "2007-01-10T00:00:00",
+      "isLeaf": false,
+      "PredecessorLink": [],
+      "OutlineNumber": "1",
+      "expanded": false
+    },
+    {
+      "Start": "2007-01-11T00:00:00",
+      "_level": 1,
+      "ParentTaskUID": "-1",
+      "Name": "分析/软件需求",
+      "PercentComplete": 40,
+      "Milestone": 0,
+      "Summary": 1,
+      "UID": "7",
+      "Duration": 20,
+      "Critical": 0,
+      "OutlineLevel": 1,
+      "Finish": "2007-02-07T00:00:00",
+      "isLeaf": false,
+      "PredecessorLink": [],
+      "OutlineNumber": "2",
+      "expanded": false
+    },
+    {
+      "Start": "2007-02-08T00:00:00",
+      "_level": 1,
+      "ParentTaskUID": "-1",
+      "Name": "设计",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "Summary": 1,
+      "UID": "17",
+      "Duration": 21,
+      "Critical": 0,
+      "OutlineLevel": 1,
+      "Finish": "2007-03-08T00:00:00",
+      "isLeaf": false,
+      "PredecessorLink": [],
+      "OutlineNumber": "3",
+      "expanded": false
+    },
+    {
+      "Start": "2007-03-09T00:00:00",
+      "_level": 1,
+      "ParentTaskUID": "-1",
+      "Name": "开发",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "Summary": 1,
+      "UID": "25",
+      "Duration": 35,
+      "Critical": 0,
+      "OutlineLevel": 1,
+      "Finish": "2007-04-26T00:00:00",
+      "isLeaf": false,
+      "PredecessorLink": [],
+      "OutlineNumber": "4",
+      "expanded": false
+    },
+    {
+      "Start": "2007-03-09T00:00:00",
+      "_level": 1,
+      "ParentTaskUID": "-1",
+      "Name": "测试",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "32",
+      "Duration": 73,
+      "Critical": 0,
+      "OutlineLevel": 1,
+      "Finish": "2007-06-19T00:00:00",
+      "isLeaf": false,
+      "PredecessorLink": [],
+      "OutlineNumber": "5",
+      "Summary": 1
+    },
+    {
+      "Start": "2007-03-09T00:00:00",
+      "_level": 2,
+      "ParentTaskUID": "32",
+      "Name": "根据产品规范制定单元测试计划",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "33",
+      "Duration": 4,
+      "Critical": 0,
+      "OutlineLevel": 2,
+      "Finish": "2007-03-14T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "24"
+        }
+      ],
+      "OutlineNumber": "5.1",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-03-09T00:00:00",
+      "_level": 2,
+      "ParentTaskUID": "32",
+      "Name": "根据产品规范制定整体测试计划",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "34",
+      "Duration": 4,
+      "Critical": 0,
+      "OutlineLevel": 2,
+      "Finish": "2007-03-14T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "24"
+        }
+      ],
+      "OutlineNumber": "5.2",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-04-27T00:00:00",
+      "_level": 2,
+      "ParentTaskUID": "32",
+      "Name": "单元测试",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "35",
+      "Duration": 21,
+      "Critical": 0,
+      "OutlineLevel": 2,
+      "Finish": "2007-05-25T00:00:00",
+      "isLeaf": false,
+      "PredecessorLink": [],
+      "OutlineNumber": "5.3",
+      "Summary": 1
+    },
+    {
+      "Start": "2007-04-27T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "35",
+      "Name": "审阅模块化代码",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "36",
+      "Duration": 6,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-05-04T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "33"
+        },
+        {
+          "Type": 1,
+          "PredecessorUID": "31"
+        }
+      ],
+      "OutlineNumber": "5.3.1",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-05-07T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "35",
+      "Name": "测试组件模块是否符合产品规范",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "37",
+      "Duration": 3,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-05-09T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "31"
+        },
+        {
+          "Type": 1,
+          "PredecessorUID": "36"
+        }
+      ],
+      "OutlineNumber": "5.3.2",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-05-10T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "35",
+      "Name": "找出不符合产品规范的异常情况",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "38",
+      "Duration": 4,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-05-15T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "37"
+        }
+      ],
+      "OutlineNumber": "5.3.3",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-05-16T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "35",
+      "Name": "修改代码",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "39",
+      "Duration": 4,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-05-21T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "38"
+        }
+      ],
+      "OutlineNumber": "5.3.4",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-05-22T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "35",
+      "Name": "重新测试经过修改的代码",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "40",
+      "Duration": 3,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-05-24T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "39"
+        }
+      ],
+      "OutlineNumber": "5.3.5",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-05-25T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "35",
+      "Name": "完成单元测试",
+      "PercentComplete": 0,
+      "Milestone": 1,
+      "UID": "41",
+      "Duration": 0,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-05-25T00:00:00",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "40"
+        }
+      ],
+      "OutlineNumber": "5.3.6",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-05-28T00:00:00",
+      "_level": 2,
+      "ParentTaskUID": "32",
+      "Name": "整体测试",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "42",
+      "Duration": 17,
+      "Critical": 0,
+      "OutlineLevel": 2,
+      "Finish": "2007-06-19T00:00:00",
+      "isLeaf": false,
+      "PredecessorLink": [],
+      "OutlineNumber": "5.4",
+      "Summary": 1
+    },
+    {
+      "Start": "2007-05-28T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "42",
+      "Name": "测试模块集成情况",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "43",
+      "Duration": 6,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-06-04T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "41"
+        }
+      ],
+      "OutlineNumber": "5.4.1",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-06-05T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "42",
+      "Name": "找出不符合规范的异常情况",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "44",
+      "Duration": 3,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-06-07T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "43"
+        }
+      ],
+      "OutlineNumber": "5.4.2",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-06-08T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "42",
+      "Name": "修改代码",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "45",
+      "Duration": 4,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-06-13T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "44"
+        }
+      ],
+      "OutlineNumber": "5.4.3",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-06-14T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "42",
+      "Name": "重新测试经过修改的代码",
+      "PercentComplete": 0,
+      "Milestone": 0,
+      "UID": "46",
+      "Duration": 3,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-06-18T23:23:59",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "45"
+        }
+      ],
+      "OutlineNumber": "5.4.4",
+      "Summary": 0
+    },
+    {
+      "Start": "2007-06-19T00:00:00",
+      "_level": 3,
+      "ParentTaskUID": "42",
+      "Name": "完成整体测试",
+      "PercentComplete": 0,
+      "Milestone": 1,
+      "UID": "47",
+      "Duration": 0,
+      "Critical": 0,
+      "OutlineLevel": 3,
+      "Finish": "2007-06-19T00:00:00",
+      "isLeaf": true,
+      "PredecessorLink": [
+        {
+          "Type": 1,
+          "PredecessorUID": "46"
+        }
+      ],
+      "OutlineNumber": "5.4.5",
+      "Summary": 0
+    }
+  ],
+  "allIds": [ "1", "7", "17", "25", "32", "35", "42", "48", "57", "67", "74", "81" ]
+}

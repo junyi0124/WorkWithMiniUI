@@ -13,7 +13,13 @@ namespace FirstCoreAppDemo.Services
         private readonly string _pidField = "pid";
         private readonly string _nodesField = "children";
 
+        public SpanningTreeService()
+        {
+            _data = new HashSet<T>();
+        }
+
         public SpanningTreeService(string idField, string pidField, string nodesField)
+            :this()
         {
             _idField = idField;
             _pidField = pidField;
@@ -25,7 +31,7 @@ namespace FirstCoreAppDemo.Services
     {
         public void main()
         {
-            //var tree = new SpanningTreeService<MaterialEntity>();
+            var tree = new SpanningTreeService<MaterialEntity>();
 
         }
 
