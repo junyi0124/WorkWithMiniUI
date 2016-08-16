@@ -49,18 +49,29 @@ namespace FirstCoreAppDemo.Controllers
                 string line;
                 streamReader.ReadLine(); //跳过第一行
 
-
+                int lineCount = 0;
                 while ((line = streamReader.ReadLine()) != null) {
                     _log.LogInformation(line);
+                    lineCount++;
 
                     string[] importData = line.Split(',');
-                    _ctx.Materials.Add(new Models.MaterialEntity
+                    if (importData.Length != 7)
                     {
-                        Code=importData[0],
-                        FullName=importData[1],
-                        Name = importData[2],
-                        ParentCode = importData[3]
-                    });
+                        _log.LogInformation($"{lineCount}|-8 数据不足7位，请检查");
+                    }
+                    else
+                    {
+                        _ctx.Materials.Add(new Models.MaterialEntity
+                        {
+                            Code = importData[0],
+                            FullName = importData[1],
+                            Name = importData[2],
+                            ParentCode = importData[3],
+                            _level = int.Parse(importData[4]),
+                            IsLeaf = bool.Parse(importData[5]),
+                            SortNumber = int.Parse(importData[6])
+                        });
+                    }
                 }
                 return await _ctx.SaveChangesAsync();
             }

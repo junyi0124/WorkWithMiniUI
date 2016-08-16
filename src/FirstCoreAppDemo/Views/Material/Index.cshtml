@@ -1,0 +1,51 @@
+﻿<h1>物料主数据 树形分页表格</h1>
+<div class="row">
+  <input type="text" id="key" class="form-control" placeholder="搜索..." />
+  <input type="button" class="btn btn-primary" value="查找" onclick="search()" />
+  <input type="button" class="btn btn-success" value="收缩所有" onclick="collapseAll()" />
+  <input type="button" class="btn btn-success" value="展开所有" onclick="expandAll()" />
+</div>
+
+<div class="row">
+  <div id="treegrid1" class="mini-pagertree" style="width:95%;height:560px;" allowResize="true"
+       url="/Material/GetMaterials" idField="id" treeColumn="name" pageSize="20">
+    <div property="columns">
+      <div type="indexcolumn"></div>
+      <div name="name" field="name" width="160">物料名称</div>
+      <div field="code" width="80" align="center">物料编码</div>
+      <div field="fullName" width="250">物料描述</div>
+      <div field="parentCode" width="80" align="center">上级物料编码</div>
+    </div>
+  </div>
+
+</div>
+
+@section Scripts {
+  <script src="~/js/boot.js" type="text/javascript"></script>
+  <script src="~/js/pagertree.js" type="text/javascript"></script>
+  <script>
+    mini.parse();
+    var tree = mini.get("treegrid1");
+    var treeid = '1';
+    tree.load({
+      id: treeid
+    });
+
+    var search = function () {
+      var key = document.getElementById('key').value;
+      tree.load({
+        id: treeid,
+        name: key
+      });
+    };
+
+    var expandAll = function () {
+      tree.expandAll();
+    };
+
+    var collapseAll = function () {
+      tree.collapseAll();
+    };
+
+  </script>
+}

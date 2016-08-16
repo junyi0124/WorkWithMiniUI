@@ -20,18 +20,14 @@ namespace FirstCoreAppDemo.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
 
-            builder.Entity<MaterialEntity>()
-                .HasIndex(m => m.Code)
+            builder.Entity<MaterialEntity>().HasIndex(m => m.Code)
                 .IsUnique();
 
-            builder.Entity<MaterialEntity>()
-                .HasIndex(m => m.FullName);
-            builder.Entity<MaterialEntity>()
-                .HasIndex(m => m.Name);
+            builder.Entity<MaterialEntity>().HasIndex(m => m.FullName);
+            builder.Entity<MaterialEntity>().HasIndex(m => m.Name);
 
-            builder.Entity<MaterialEntity>()
-                .HasIndex(m => m.ParentCode);
-
+            builder.Entity<MaterialEntity>().HasIndex(m => m.ParentCode);
+            builder.Entity<MaterialEntity>().HasIndex(m => m.SortNumber);
         }
 
 

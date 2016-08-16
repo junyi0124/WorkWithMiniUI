@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace FirstCoreAppDemo.Models
 {
-    public class MaterialEntity : IMasterData
+    public class MaterialEntity : IPageTree
     {
         public int Id { get; set; }
 
@@ -17,11 +18,25 @@ namespace FirstCoreAppDemo.Models
 
         [StringLength(128), Display(Name = "上级物料编码")]
         public string ParentCode { get; set; }
+
+        public int _level { get; set; }
+
+        public bool IsLeaf { get; set; }
+
+        public bool Expanded { get; set; }
+
+        public int SortNumber { get; set; }
     }
 
-    public interface IMasterData
+    public interface IPageTree
     {
         string Code { get; set; }
         string ParentCode { get; set; }
+
+        int _level { get; }
+        bool IsLeaf { get; }
+        bool Expanded { get; }
+
+        int SortNumber { get; set; }
     }
 }
