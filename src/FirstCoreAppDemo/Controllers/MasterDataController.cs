@@ -27,7 +27,7 @@ namespace FirstCoreAppDemo.Controllers
         public async Task<IActionResult> Index()
         {
             await ClearData();
-            await ReadCsvFile();
+            ViewBag.ItemCount = await ReadCsvFile();
             return View();
         }
 
@@ -40,7 +40,7 @@ namespace FirstCoreAppDemo.Controllers
             }
         }
 
-        private async Task ReadCsvFile()
+        private async Task<int> ReadCsvFile()
         {
             var masterDataFilePath = _env.ContentRootPath + @"\wwwroot\content\物料主数据维护.csv";
 
@@ -62,7 +62,7 @@ namespace FirstCoreAppDemo.Controllers
                         ParentCode = importData[3]
                     });
                 }
-                await _ctx.SaveChangesAsync();
+                return await _ctx.SaveChangesAsync();
             }
         }
     }
