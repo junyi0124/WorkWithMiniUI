@@ -8,6 +8,7 @@ namespace FirstCoreAppDemo.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
@@ -36,5 +37,7 @@ namespace FirstCoreAppDemo.Controllers
         {
             return View();
         }
+
+
     }
 }

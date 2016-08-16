@@ -129,11 +129,13 @@ namespace FirstCoreAppDemo.FromMiniUI
         protected void DoExpandeds()
         {
             //处理expandedField
+            // 删除所有node中的 expand 字段
             for (int i = 0, l = list.Count; i < l; i++)
             {
                 Hashtable node = (Hashtable)list[i];
                 node.Remove(expandedField);
             }
+            // 重新赋值所有node的 expand 字段
             for (int i = 0, l = _collapseNodes.Count; i < l; i++)
             {
                 string id = _collapseNodes[i].ToString();

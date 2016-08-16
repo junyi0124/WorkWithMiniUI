@@ -72,10 +72,6 @@ namespace FirstCoreAppDemo.Data.Migrations
 
                     b.Property<string>("Code")
                         .IsRequired()
-                        .HasAnnotation("MaxLength", 6);
-
-                    b.Property<string>("FullCode")
-                        .IsRequired()
                         .HasAnnotation("MaxLength", 128);
 
                     b.Property<string>("FullName")
@@ -86,20 +82,19 @@ namespace FirstCoreAppDemo.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 256);
 
-                    b.Property<int?>("PId");
-
-                    b.Property<int>("Unit");
+                    b.Property<string>("ParentCode")
+                        .HasAnnotation("MaxLength", 128);
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FullCode")
+                    b.HasIndex("Code")
                         .IsUnique();
 
                     b.HasIndex("FullName");
 
                     b.HasIndex("Name");
 
-                    b.HasIndex("PId");
+                    b.HasIndex("ParentCode");
 
                     b.ToTable("Materials");
                 });

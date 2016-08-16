@@ -2,36 +2,26 @@
 
 namespace FirstCoreAppDemo.Models
 {
-    public class MaterialEntity
+    public class MaterialEntity : IMasterData
     {
         public int Id { get; set; }
 
-        [StringLength(6), Required]
+        [StringLength(128), Required, Display(Name= "物料编码")]
         public string Code { get; set; }
 
-        [StringLength(128), Required]
-        public string FullCode { get; set; }
-
-        [StringLength(256), Required]
+        [StringLength(256), Required, Display(Name = "物料简称")]
         public string Name { get; set; }
 
-        [StringLength(256), Required]
+        [StringLength(256), Required, Display(Name = "物料全称")]
         public string FullName { get; set; }
 
-        [Required]
-        public Unit Unit { get; set; }
+        [StringLength(128), Display(Name = "上级物料编码")]
+        public string ParentCode { get; set; }
+    }
 
-        public int? PId { get; set; }
-
-        /// <summary>
-        /// 是否为条目，而不是分类
-        /// </summary>
-        public bool IsItem
-        {
-            get
-            {
-                return Code.Length == FullCode.Length && string.Equals(Code, FullCode);
-            }
-        }
+    public interface IMasterData
+    {
+        string Code { get; set; }
+        string ParentCode { get; set; }
     }
 }

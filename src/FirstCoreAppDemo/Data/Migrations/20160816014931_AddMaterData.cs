@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace FirstCoreAppDemo.Data.Migrations
 {
-    public partial class AddMaterials : Migration
+    public partial class AddMaterData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,12 +15,10 @@ namespace FirstCoreAppDemo.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Code = table.Column<string>(maxLength: 6, nullable: false),
-                    FullCode = table.Column<string>(maxLength: 128, nullable: false),
+                    Code = table.Column<string>(maxLength: 128, nullable: false),
                     FullName = table.Column<string>(maxLength: 256, nullable: false),
                     Name = table.Column<string>(maxLength: 256, nullable: false),
-                    PId = table.Column<int>(nullable: true),
-                    Unit = table.Column<int>(nullable: false)
+                    ParentCode = table.Column<string>(maxLength: 128, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,9 +26,9 @@ namespace FirstCoreAppDemo.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Materials_FullCode",
+                name: "IX_Materials_Code",
                 table: "Materials",
-                column: "FullCode",
+                column: "Code",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -44,9 +42,9 @@ namespace FirstCoreAppDemo.Data.Migrations
                 column: "Name");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Materials_PId",
+                name: "IX_Materials_ParentCode",
                 table: "Materials",
-                column: "PId");
+                column: "ParentCode");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

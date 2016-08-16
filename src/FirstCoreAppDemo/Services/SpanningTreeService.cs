@@ -13,6 +13,11 @@ namespace FirstCoreAppDemo.Services
         private readonly string _pidField = "pid";
         private readonly string _nodesField = "children";
 
+        private readonly string rootId = "-1";
+        private readonly string leafField = "isLeaf";
+        private readonly string levelField = "_level";
+        private readonly string expandedField = "expanded";
+
         public SpanningTreeService()
         {
             _data = new HashSet<T>();
@@ -25,6 +30,27 @@ namespace FirstCoreAppDemo.Services
             _pidField = pidField;
             _nodesField = nodesField;
         }
+
+        public MiniUiPageTreeRespond<T> ToTree(string term = "",
+            string __ecconfig = "",
+            int pageIndex = 0,
+            int pageSize = 20)
+        {
+            MiniUiPageTreeRespond<T> json = new MiniUiPageTreeRespond<T>();
+
+            // 查询，折叠，获取部分数据
+
+            // 转换为Hashset
+
+            // 返回父节点
+
+
+            // 返回json
+            //json.total = ;
+            //json.data = Data;
+            //json.allIds = ;
+            return json;
+        }
     }
 
     public class SPS_Test
@@ -32,7 +58,7 @@ namespace FirstCoreAppDemo.Services
         public void main()
         {
             var tree = new SpanningTreeService<MaterialEntity>();
-
+            //tree.ToTree("",)
         }
 
     }

@@ -49,7 +49,7 @@ namespace FirstCoreAppDemo.Controllers
             result["allIds"] = allIds;
 
             //返回JSON
-            String json = FromMiniUI.JSON.Encode(result);
+            string json = FromMiniUI.JSON.Encode(result);
             return Content(json);
         }
 
@@ -87,7 +87,7 @@ namespace FirstCoreAppDemo.Controllers
 
         private string MapPath(string v)
         {
-            var resPath = _env.ContentRootPath + "\\wwwroot\\js\\{0}";
+            var resPath = _env.ContentRootPath + "\\wwwroot\\content\\{0}";
             //todo 此处没有使用动态获取，以后有时间再修复这个功能
             return string.Format(resPath, v);
         }
